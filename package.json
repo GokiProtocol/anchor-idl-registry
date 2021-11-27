@@ -11,8 +11,8 @@
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",
     "@saberhq/eslint-config": "^1.9.0",
-    "@types/js-yaml": "^4",
-    "@types/lodash": "^4",
+    "@types/js-yaml": "^4.0.5",
+    "@types/lodash": "^4.14.177",
     "@types/node": "^16.11.10",
     "@types/prettier": "^2.4.2",
     "eslint": "^8.3.0",

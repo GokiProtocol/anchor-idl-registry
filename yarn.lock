@@ -89,8 +89,8 @@ __metadata:
     "@rushstack/eslint-patch": ^1.1.0
     "@saberhq/eslint-config": ^1.9.0
     "@solana/web3.js": ^1.31.0
-    "@types/js-yaml": ^4
-    "@types/lodash": ^4
+    "@types/js-yaml": ^4.0.5
+    "@types/lodash": ^4.14.177
     "@types/node": ^16.11.10
     "@types/prettier": ^2.4.2
     axios: ^0.24.0
@@ -327,7 +327,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/js-yaml@npm:^4":
+"@types/js-yaml@npm:^4.0.5":
   version: 4.0.5
   resolution: "@types/js-yaml@npm:4.0.5"
   checksum: 7dcac8c50fec31643cc9d6444b5503239a861414cdfaa7ae9a38bc22597c4d850c4b8cec3d82d73b3fbca408348ce223b0408d598b32e094470dfffc6d486b4d
@@ -348,7 +348,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4, @types/lodash@npm:^4.14.159":
+"@types/lodash@npm:^4.14.159, @types/lodash@npm:^4.14.177":
   version: 4.14.177
   resolution: "@types/lodash@npm:4.14.177"
   checksum: 00f9eb300ed5219cfbabb3448d4a71744895edad60dcfda9f028c0808a50eb6ad1ca9f673b56a85f85668a4ea54b9870643625468a747039c435643e52253a75
