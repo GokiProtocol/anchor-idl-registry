@@ -73,6 +73,28 @@ const downloadAll = async () => {
       await fs.writeFile(`${dir}/idl.json`, JSON.stringify(idl, null, 2));
     })
   );
+
+  const contents = await fs.readdir(`${__dirname}/../data/mainnet-beta`);
+  const programNames = await Promise.all(
+    contents.map(async (programID) => {
+      const idlJSON = JSON.parse(
+        (
+          await fs.readFile(
+            `${__dirname}/../data/mainnet-beta/${programID}/idl.json`
+          )
+        ).toString()
+      ) as Idl;
+      return [programID, idlJSON.name] as const;
+    })
+  );
+  const mapping = programNames.reduce((acc, [programID, name]) => {
+    acc[programID] = name;
+    return acc;
+  }, {} as Record<string, string>);
+  await fs.writeFile(
+    `${__dirname}/../data/mainnet-beta/index.json`,
+    JSON.stringify(mapping, null, 2)
+  );
 };
 
 downloadAll().catch((err) => {
