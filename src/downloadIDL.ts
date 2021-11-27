@@ -66,6 +66,7 @@ const downloadAll = async () => {
         }
       }
       if (!idl) {
+        console.warn(`Could not find IDL for ${cluster} ${programID}.`);
         return null;
       }
       await fs.mkdir(dir, { recursive: true });

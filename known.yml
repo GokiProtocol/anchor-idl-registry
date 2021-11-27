@@ -1,3 +1,4 @@
+# Quarry
 QMMD16kjauP5knBwxNUJRZ1Z5o3deBuFrqVjBVmmqto:
   url: "https://raw.githubusercontent.com/DeployDAO/verified-program-artifacts/verify-QuarryProtocol__quarry-v1.10.2/idl/quarry_merge_mine.json"
 QMNeHCGYnLVDn1icRAfQZpjPLBNkfGbSKRB83G5d8KB:
@@ -10,3 +11,9 @@ QRDxhMw1P2NEfiw5mYXG79bwfgHTdasY2xNP76XSea9:
   url: "https://raw.githubusercontent.com/DeployDAO/verified-program-artifacts/verify-QuarryProtocol__quarry-v1.10.2/idl/quarry_redeemer.json"
 QREGBnEj9Sa5uR91AV8u3FxThgP5ZCvdZUW2bHAkfNc:
   url: "https://raw.githubusercontent.com/DeployDAO/verified-program-artifacts/verify-QuarryProtocol__quarry-v1.10.2/idl/quarry_registry.json"
+
+# Goki
+GokivDYuQXPZCWRkwMhdH2h91KpDQXBEmpgBgs55bnpH:
+  url: https://raw.githubusercontent.com/DeployDAO/verified-program-artifacts/verify-GokiProtocol__goki-v0.3.1/idl/smart_wallet.json
+NFTUJzSHuUCsMMqMRJpB7PmbsaU7Wm51acdPk2FXMLn:
+  url: https://raw.githubusercontent.com/DeployDAO/verified-program-artifacts/verify-GokiProtocol__goki-v0.3.1/idl/token_signer.json
