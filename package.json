@@ -1,0 +1,29 @@
+{
+  "name": "@gokiprotocol/anchor-idl-registry",
+  "version": "0.0.0",
+  "description": "Anchor IDL registry",
+  "main": "index.js",
+  "repository": "git@github.com:GokiProtocol/anchor-idl-registry.git",
+  "author": "Goki Rajesh <goki@goki.so>",
+  "license": "AGPL-3.0",
+  "private": true,
+  "packageManager": "yarn@3.1.1",
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.1.0",
+    "@saberhq/eslint-config": "^1.9.0",
+    "@types/node": "^16.11.10",
+    "@types/prettier": "^2.4.2",
+    "eslint": "^8.3.0",
+    "eslint-import-resolver-node": "^0.3.6",
+    "eslint-plugin-import": "^2.25.3",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.5.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@project-serum/anchor": "^0.18.2",
+    "@solana/web3.js": "^1.31.0"
+  }
+}
