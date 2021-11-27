@@ -26,12 +26,17 @@
     "typescript": "^4.5.2"
   },
   "scripts": {
-    "sync": "ts-node src/downloadIDL.ts"
+    "sync": "ts-node src/downloadIDL.ts",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@project-serum/anchor": "^0.18.2",
     "@solana/web3.js": "^1.31.0",
     "axios": "^0.24.0",
     "lodash": "^4.17.21"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --cache --fix",
+    "*.{md,json,js,yml,yaml,html}": "prettier --write"
   }
 }
