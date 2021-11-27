@@ -1,0 +1,12 @@
+QMMD16kjauP5knBwxNUJRZ1Z5o3deBuFrqVjBVmmqto:
+  url: "https://raw.githubusercontent.com/DeployDAO/verified-program-artifacts/verify-QuarryProtocol__quarry-v1.10.2/idl/quarry_merge_mine.json"
+QMNeHCGYnLVDn1icRAfQZpjPLBNkfGbSKRB83G5d8KB:
+  url: "https://raw.githubusercontent.com/DeployDAO/verified-program-artifacts/verify-QuarryProtocol__quarry-v1.10.2/idl/quarry_mine.json"
+QMWoBmAyJLAsA1Lh9ugMTw2gciTihncciphzdNzdZYV:
+  url: "https://raw.githubusercontent.com/DeployDAO/verified-program-artifacts/verify-QuarryProtocol__quarry-v1.10.2/idl/quarry_mint_wrapper.json"
+QoP6NfrQbaGnccXQrMLUkog2tQZ4C1RFgJcwDnT8Kmz:
+  url: "https://raw.githubusercontent.com/DeployDAO/verified-program-artifacts/verify-QuarryProtocol__quarry-v1.10.2/idl/quarry_operator.json"
+QRDxhMw1P2NEfiw5mYXG79bwfgHTdasY2xNP76XSea9:
+  url: "https://raw.githubusercontent.com/DeployDAO/verified-program-artifacts/verify-QuarryProtocol__quarry-v1.10.2/idl/quarry_redeemer.json"
+QREGBnEj9Sa5uR91AV8u3FxThgP5ZCvdZUW2bHAkfNc:
+  url: "https://raw.githubusercontent.com/DeployDAO/verified-program-artifacts/verify-QuarryProtocol__quarry-v1.10.2/idl/quarry_registry.json"

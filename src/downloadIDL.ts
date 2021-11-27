@@ -1,21 +1,12 @@
+import type { Idl } from "@project-serum/anchor";
 import { Program, Provider, Wallet } from "@project-serum/anchor";
-import type { Cluster } from "@solana/web3.js";
 import { Connection, Keypair } from "@solana/web3.js";
+import axios from "axios";
 import * as fs from "fs/promises";
+import * as yaml from "js-yaml";
+import { uniq } from "lodash";
 
-const downloadIDL = async (
-  cluster: Cluster,
-  address: string
-): Promise<void> => {
-  const dir = `${__dirname}/../data/${cluster}/${address}`;
-  try {
-    await fs.stat(`${dir}/idl.json`);
-    console.warn(`${cluster} ${address} has already been fetched`);
-    return;
-  } catch (e) {
-    //
-  }
-
+const downloadIDL = async (address: string): Promise<Idl | null> => {
   // const connection = new Connection("https://api.devnet.solana.com");
   const connection = new Connection("https://gokal.rpcpool.com");
   const provider = new Provider(
@@ -23,13 +14,7 @@ const downloadIDL = async (
     new Wallet(Keypair.generate()),
     Provider.defaultOptions()
   );
-  const idl = await Program.fetchIdl(address, provider);
-  if (!idl) {
-    console.warn(`IDL not on-chain for ${cluster} ${address}.`);
-    return;
-  }
-  await fs.mkdir(dir, { recursive: true });
-  await fs.writeFile(`${dir}/idl.json`, JSON.stringify(idl, null, 2));
+  return await Program.fetchIdl(address, provider);
 };
 
 const PROGRAMS = [
@@ -45,11 +30,51 @@ const PROGRAMS = [
   "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin",
 ];
 
-Promise.all(
-  PROGRAMS.map(async (programID) => {
-    return downloadIDL("mainnet-beta", programID);
-  })
-).catch((err) => {
+const downloadAll = async () => {
+  const known = yaml.load(
+    (await fs.readFile(`${__dirname}/../known.yml`)).toString()
+  ) as Record<
+    string,
+    {
+      url: string;
+    }
+  >;
+
+  const knownProgramIDs = Object.keys(known);
+
+  await Promise.all(
+    uniq([...PROGRAMS, ...knownProgramIDs]).map(async (programID) => {
+      const cluster = "mainnet-beta";
+      const dir = `${__dirname}/../data/${cluster}/${programID}`;
+      try {
+        await fs.stat(`${dir}/idl.json`);
+        console.warn(`${cluster} ${programID} has already been fetched`);
+        return;
+      } catch (e) {
+        //
+      }
+
+      let idl: Idl | null | null;
+      const knownIDL = known[programID];
+      if (knownIDL) {
+        const { data } = await axios.get<Idl>(knownIDL.url);
+        idl = data;
+      } else {
+        idl = await downloadIDL(programID);
+        if (!idl) {
+          console.warn(`IDL not on-chain for ${cluster} ${programID}.`);
+        }
+      }
+      if (!idl) {
+        return null;
+      }
+      await fs.mkdir(dir, { recursive: true });
+      await fs.writeFile(`${dir}/idl.json`, JSON.stringify(idl, null, 2));
+    })
+  );
+};
+
+downloadAll().catch((err) => {
   console.error(err);
   process.exit(1);
 });

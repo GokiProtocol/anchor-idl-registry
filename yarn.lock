@@ -89,13 +89,18 @@ __metadata:
     "@rushstack/eslint-patch": ^1.1.0
     "@saberhq/eslint-config": ^1.9.0
     "@solana/web3.js": ^1.31.0
+    "@types/js-yaml": ^4
+    "@types/lodash": ^4
     "@types/node": ^16.11.10
     "@types/prettier": ^2.4.2
+    axios: ^0.24.0
     eslint: ^8.3.0
     eslint-import-resolver-node: ^0.3.6
     eslint-plugin-import: ^2.25.3
     husky: ^7.0.4
+    js-yaml: ^4.1.0
     lint-staged: ^12.1.2
+    lodash: ^4.17.21
     prettier: ^2.5.0
     ts-node: ^10.4.0
     typescript: ^4.5.2
@@ -322,6 +327,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/js-yaml@npm:^4":
+  version: 4.0.5
+  resolution: "@types/js-yaml@npm:4.0.5"
+  checksum: 7dcac8c50fec31643cc9d6444b5503239a861414cdfaa7ae9a38bc22597c4d850c4b8cec3d82d73b3fbca408348ce223b0408d598b32e094470dfffc6d486b4d
+  languageName: node
+  linkType: hard
+
 "@types/json-schema@npm:^7.0.9":
   version: 7.0.9
   resolution: "@types/json-schema@npm:7.0.9"
@@ -336,7 +348,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.159":
+"@types/lodash@npm:^4, @types/lodash@npm:^4.14.159":
   version: 4.14.177
   resolution: "@types/lodash@npm:4.14.177"
   checksum: 00f9eb300ed5219cfbabb3448d4a71744895edad60dcfda9f028c0808a50eb6ad1ca9f673b56a85f85668a4ea54b9870643625468a747039c435643e52253a75
@@ -685,6 +697,15 @@ __metadata:
   version: 2.0.0
   resolution: "astral-regex@npm:2.0.0"
   checksum: 876231688c66400473ba505731df37ea436e574dd524520294cc3bbc54ea40334865e01fa0d074d74d036ee874ee7e62f486ea38bc421ee8e6a871c06f011766
+  languageName: node
+  linkType: hard
+
+"axios@npm:^0.24.0":
+  version: 0.24.0
+  resolution: "axios@npm:0.24.0"
+  dependencies:
+    follow-redirects: ^1.14.4
+  checksum: 468cf496c08a6aadfb7e699bebdac02851e3043d4e7d282350804ea8900e30d368daa6e3cd4ab83b8ddb5a3b1e17a5a21ada13fc9cebd27b74828f47a4236316
   languageName: node
   linkType: hard
 
@@ -1625,6 +1646,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"follow-redirects@npm:^1.14.4":
+  version: 1.14.5
+  resolution: "follow-redirects@npm:1.14.5"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: f004a76b2ee3a849772c2816e30928253bf47537b0f00184d89f4966413add96a228a4d96ca8c702bc045a683c52c2ba41545c915cc1a5e33bf8fd9d07b59aee
+  languageName: node
+  linkType: hard
+
 "fs-minipass@npm:^2.0.0":
   version: 2.1.0
   resolution: "fs-minipass@npm:2.1.0"
@@ -2317,7 +2348,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.20":
+"lodash@npm:^4.17.20, lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
